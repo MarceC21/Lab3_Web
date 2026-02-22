@@ -46,6 +46,17 @@ GET | {{baseURL}}/breeds | limit=10 page=0 | none | 200 OK | 200 OK |
 
 ---
 
+## Colección 2 – Errores Intencionales
+
+| Método | URL | Query Params | Headers | Status Esperado | Status Obtenido |
+|-------|-----|-------------|---------|-----------------|----------------|
+GET | {{baseURL}}/images/s00xxx| - | x-api-key | 400 Bad Request| 400 Bad Request |
+GET | {{baseURL}}/favorite | - | x-api-key | 404 Not Found | 404 Not Found |
+GET | {{baseURL}}{/favourites| - | x-api-key vacía | 401 Unauthorized | 401 Unauthorized |
+GET | {{baseURL}}{/favourites| - | x-api-key inválida | 403 Forbidden | 401 Unauthorized |
+
+---
+
 ## Evidencia (capturas)
 
 - Error
