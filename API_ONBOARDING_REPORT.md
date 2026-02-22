@@ -2,12 +2,20 @@
 
 ## Resumen de la API
 
-- **Nombre de la API:** 
-- **Base URL:** 
-- **Tipo de autenticación:** (p. ej. API Key, Bearer Token, OAuth2)
-- **Rate limit:** 
-- **Contacto / dueño:** 
-
+- **Nombre de la API:** TheCatAPI  
+- **Base URL:** https://api.thecatapi.com/v1 
+- **Tipo de autenticación:** API Key mediante header `x-api-key` 
+- **Rate limit:**
+   - Sin API Key:
+    - Máximo 10 imágenes por request
+    - Acceso limitado a imágenes
+  - Con API Key:
+    - Hasta 100 imágenes por request
+    - Acceso completo a endpoints
+    - Permite upload y delete de imágenes
+- **Links de la documentación:** 
+  - **General:** https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=FJkYOq9tW 
+  - **Para usar en Postman** https://documenter.getpostman.com/view/5578104/RWgqUxxh#8606c7c6-338e-46aa-8f1a-3335ed2b8127
 ---
 
 
