@@ -67,20 +67,33 @@ GET |{{baseURL}}/images/{image_id}|- | x-api-key | 200 OK | 200 OK |
 DELETE | {{baseURL}}/images/{image_id} | - | x-api-key | 200 OK | 204 No Content |
 
 
-# Evidencia (capturas)
+# Evidencia de respuestas (capturas)
 
 ## ÉXITOS
 -Éxito con el método POST para subir una imagen 
 `![Exito 1](Exito/Ex1Post.png)`
 
 -Éxito con el método GET
-`![Exito 1](Exito/Ex2Get.png)`
+`![Exito 2](Exito/Ex2Get.png)`
 
 -Éxito con el método GET
-`![Exito 1](Exito/Ex3Get.png)`
+`![Exito 3](Exito/Ex3Get.png)`
 
+
+## FALLIDAS
+-Error 400
+`![Fallo 1](Fallos/Error1.png)`
+
+-Error 401
+`![Fallo 2](Fallos/Error2.png)`
 
 
 ---
 
 
+## Observaciones
+
+- Algunos endpoints GET funcionan sin API Key pero con limitaciones
+- Los endpoints POST y DELETE requieren autenticación obligatoria
+- Los errores HTTP fueron reproducidos intencionalmente para pruebas
+- La API devuelve respuestas en formato JSON
