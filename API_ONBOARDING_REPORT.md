@@ -57,6 +57,16 @@ GET | {{baseURL}}{/favourites| - | x-api-key inválida | 403 Forbidden | 401 Una
 
 ---
 
+# Colección 3 – Solicitudes Reales
+
+| Método | URL | Query Params | Headers | Status Esperado | Status Obtenido |
+|-------|-----|-------------|---------|-----------------|----------------|
+GET |{{baseURL}}/images/search| limit=1 has_breeds=1 breed_ids=beng mime_types=png size=med| x-api-key | 200 OK | 200 OK |
+POST | {{baseURL}}{/v1/images/upload | file, sub_id, breed_ids | x-api-key | 201 Created | 201 Created |
+GET |{{baseURL}}/images/{image_id}|- | x-api-key | 200 OK | 200 OK |
+DELETE | {{baseURL}}/images/{image_id} | - | x-api-key | 200 OK | 204 No Content |
+
+
 ## Evidencia (capturas)
 
 - Error
