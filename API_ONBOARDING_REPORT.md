@@ -42,7 +42,7 @@ GET | {{baseURL}}/images/0XYvRd7oD | - | x-api-key | 200 OK | 200 OK |
 GET | {{baseURL}}/images/search| has_breeds=0 limit=5 order=DESC | x-api-key | 200 OK | 200 OK |
 GET | {{baseURL}}/images/search | limit=5 has_breeds=1 breed_ids=beng order=RANDOM mime_types=jpg | x-api-key | 200 OK | 200 OK |
 GET | {{baseURL}}/images/search | order=ASC limit=2 page=2| none | 200 OK | 200 OK |
-GET | {{baseURL}}/breeds | limit=10 page=0 | none | 200 OK | 200 OK |
+GET | {{baseURL}}/breeds | limit=10 page=2 | none | 200 OK | 200 OK |
 
 ---
 
@@ -52,8 +52,8 @@ GET | {{baseURL}}/breeds | limit=10 page=0 | none | 200 OK | 200 OK |
 |-------|-----|-------------|---------|-----------------|----------------|
 GET | {{baseURL}}/images/s00xxx| - | x-api-key | 400 Bad Request| 400 Bad Request |
 GET | {{baseURL}}/favorite | - | x-api-key | 404 Not Found | 404 Not Found |
-GET | {{baseURL}}{/favourites| - | x-api-key vacía | 401 Unauthorized | 401 Unauthorized |
-GET | {{baseURL}}{/favourites| - | x-api-key inválida | 403 Forbidden | 401 Unauthorized |
+GET | {{baseURL}}/favourites| - | x-api-key vacía | 401 Unauthorized | 401 Unauthorized |
+GET | {{baseURL}}/favourites| - | x-api-key inválida | 403 Forbidden | 401 Unauthorized |
 
 ---
 
@@ -62,15 +62,24 @@ GET | {{baseURL}}{/favourites| - | x-api-key inválida | 403 Forbidden | 401 Una
 | Método | URL | Query Params | Headers | Status Esperado | Status Obtenido |
 |-------|-----|-------------|---------|-----------------|----------------|
 GET |{{baseURL}}/images/search| limit=1 has_breeds=1 breed_ids=beng mime_types=png size=med| x-api-key | 200 OK | 200 OK |
-POST | {{baseURL}}{/v1/images/upload | file, sub_id, breed_ids | x-api-key | 201 Created | 201 Created |
+POST | {{baseURL}}/v1/images/upload | file, sub_id, breed_ids | x-api-key | 201 Created | 201 Created |
 GET |{{baseURL}}/images/{image_id}|- | x-api-key | 200 OK | 200 OK |
 DELETE | {{baseURL}}/images/{image_id} | - | x-api-key | 200 OK | 204 No Content |
 
 
-## Evidencia (capturas)
+# Evidencia (capturas)
 
-- Error
-`![texto alternativo](ruta/a/imagen.png)`
+## ÉXITOS
+-Éxito con el método POST para subir una imagen 
+`![Exito 1](Exito/Ex1Post.png)`
+
+-Éxito con el método GET
+`![Exito 1](Exito/Ex2Get.png)`
+
+-Éxito con el método GET
+`![Exito 1](Exito/Ex3Get.png)`
+
+
 
 ---
 
