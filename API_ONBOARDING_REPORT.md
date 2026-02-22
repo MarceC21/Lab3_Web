@@ -7,8 +7,8 @@
 - **Tipo de autenticación:** API Key mediante header `x-api-key` 
 - **Rate limit:**
    - Sin API Key:
-    - Máximo 10 imágenes por request
-    - Acceso limitado a imágenes
+      - Máximo 10 imágenes por request
+      - Acceso limitado a imágenes
   - Con API Key:
     - Hasta 100 imágenes por request
     - Acceso completo a endpoints
@@ -18,75 +18,33 @@
   - **Para usar en Postman** https://documenter.getpostman.com/view/5578104/RWgqUxxh#8606c7c6-338e-46aa-8f1a-3335ed2b8127
 ---
 
+# Environment utilizado
 
-## Tabla de contenido
-- [Resumen de la API](#resumen-de-la-api)
-- [Endpoints (resumen)](#endpoints-resumen)
-- [Detalles por endpoint](#detalles-por-endpoint)
-- [Evidencia (capturas)](#evidencia-capturas)
-- [Resumen de pruebas](#resumen-de-pruebas)
-- [Instrucciones para completar](#instrucciones-para-completar)
-
----
-
-
-## Endpoints (resumen)
-
-| Método | URL | Query params | Headers | Body | Status esperado | Status obtenido | Notas |
-|--------|-----|--------------|---------|------|-----------------|------------------|-------|
-| GET    | /ruta/ejemplo | page, limit | Authorization: Bearer <token> | - | 200 | - | Ejemplo placeholder |
-
-> Añadir todas las rutas principales en filas separadas
+| Variable | Valor |
+|---------|------|
+| baseURL | https://api.thecatapi.com/v1 |
+| resource | images/search |
+| id | 1 |
+| query | limit=10 |
+| apiKey | API_KEY |
 
 ---
 
-## Detalles por endpoint
 
-### Nombre del endpoint: ()
+# Endpoints (resumen)
 
-- **Descripción:** 
-- **Método:** 
-- **URL:** 
-- **Parámetros Query:**
-  - `param1` (tipo) — descripción
-- **Headers requeridos:**
-  - `Authorization: Bearer <token>`
-  - `Content-Type: application/json`
-- **Body (ejemplo):**
+## Colección 1 – Happy Path
 
-```json
-{
-  "campo": "valor"
-}
-```
-
-- **Comando de ejemplo (curl):**
-
-```bash
-curl -X GET "https://{base_url}/ruta/ejemplo?param=valor" -H "Authorization: Bearer $TOKEN"
-```
-
-- **Response esperada (ejemplo):**
-
-```json
-{
-  "status": "ok",
-  "data": {}
-}
-```
-
-- **Response obtenida (pegar aquí la respuesta real / copiar JSON):**
-
-```json
-
-```
-
-- **Status code obtenido:** 
-- **Observaciones / errores encontrados:**
+| Método | URL | Query Params | Headers | Status Esperado | Status Obtenido |
+|-------|-----|-------------|---------|-----------------|----------------|
+GET | {{baseURL}}/images/search | limit=10 | x-api-key | 200 OK | 200 OK |
+GET | {{baseURL}}/images/0XYvRd7oD | - | x-api-key | 200 OK | 200 OK |
+GET | {{baseURL}}/images/search| has_breeds=0 limit=5 order=DESC | x-api-key | 200 OK | 200 OK |
+GET | {{baseURL}}/images/search | limit=5 has_breeds=1 breed_ids=beng order=RANDOM mime_types=jpg | x-api-key | 200 OK | 200 OK |
+GET | {{baseURL}}/images/search | order=ASC limit=2 page=2| none | 200 OK | 200 OK |
+GET | {{baseURL}}/breeds | limit=10 page=0 | none | 200 OK | 200 OK |
 
 ---
-
-Repetir por cada endpoint
 
 ## Evidencia (capturas)
 
