@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "6e4fe6dc-fd21-43f1-a8db-e0459e45a4e1",
+    "name": "Errores",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52567366",
+    "_collection_link": "https://go.postman.co/collection/52567366-6e4fe6dc-fd21-43f1-a8db-e0459e45a4e1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Error 400",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/s00xxx",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "s00xxx"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}} /favorite",
+          "host": [
+            "{{baseURL}} "
+          ],
+          "path": [
+            "favorite"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error 401",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "x-api-key",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/favourites",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "favourites"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

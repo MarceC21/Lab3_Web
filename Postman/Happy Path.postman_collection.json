@@ -1,0 +1,246 @@
+{
+  "info": {
+    "_postman_id": "869bc57b-d4f1-47a7-a8b3-5b08b29c289f",
+    "name": "Happy Path",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52567366",
+    "_collection_link": "https://go.postman.co/collection/52567366-869bc57b-d4f1-47a7-a8b3-5b08b29c289f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ListaImgRandom",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/search?limit=10",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/search?has_breeds=0&limit=5&order=DESC",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "has_breeds",
+              "value": "0",
+              "description": "Only return images that have not breed information"
+            },
+            {
+              "key": "limit",
+              "value": "5",
+              "description": "Number of images to return "
+            },
+            {
+              "key": "order",
+              "value": "DESC",
+              "description": "The Order to return the images in by their upload date"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DetallePorId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/0XYvRd7oD",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "0XYvRd7oD"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtro",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "limit",
+            "value": "5",
+            "type": "text"
+          },
+          {
+            "key": "breed_ids",
+            "value": "beng",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURL}}/images/search?limit=5&has_breeds=1&breed_ids=beng&order=RANDOM&mime_types=jpg",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5",
+              "description": "Number of images to return "
+            },
+            {
+              "key": "has_breeds",
+              "value": "1",
+              "description": "Only return images that have breed information"
+            },
+            {
+              "key": "breed_ids",
+              "value": "beng",
+              "description": "id=beng"
+            },
+            {
+              "key": "order",
+              "value": "RANDOM",
+              "description": "The Order to return the images in by their upload date"
+            },
+            {
+              "key": "mime_types",
+              "value": "jpg",
+              "description": "Return only jpg"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Paginacion",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/search?order=ASC&limit=2&page=2",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "order",
+              "value": "ASC"
+            },
+            {
+              "key": "limit",
+              "value": "2",
+              "description": "Number of images to return"
+            },
+            {
+              "key": "page",
+              "value": "2",
+              "description": "The page number to use when Paginating through the images"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SecondResource",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/breeds?limit=10&page=2",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "breeds"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10",
+              "description": "Number of images to return"
+            },
+            {
+              "key": "page",
+              "value": "2",
+              "description": "The page number to use when Paginating through the images"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

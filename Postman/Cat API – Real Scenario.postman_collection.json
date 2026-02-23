@@ -1,0 +1,184 @@
+{
+  "info": {
+    "_postman_id": "4d591774-0e4a-4533-95bd-17b470b3abda",
+    "name": "Cat API – Real Scenario",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52567366",
+    "_collection_link": "https://go.postman.co/collection/52567366-4d591774-0e4a-4533-95bd-17b470b3abda?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ObtenerImagenEspec",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/search?limit=1&has_breeds=1&breed_ids=beng&mime_types=png&size=med",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "1",
+              "description": "Solo una imagen"
+            },
+            {
+              "key": "has_breeds",
+              "value": "1"
+            },
+            {
+              "key": "breed_ids",
+              "value": "beng",
+              "description": "El tipo de raza"
+            },
+            {
+              "key": "mime_types",
+              "value": "png",
+              "description": "Solo imagen de tipo png"
+            },
+            {
+              "key": "size",
+              "value": "med"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SubirImg",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "description": "La imagen",
+              "type": "file",
+              "uuid": "9d4b9179-1fc6-475c-87ab-5d97a81ece22",
+              "src": "postman-cloud:///1f11037f-fd74-4620-8979-4a76abc9765e"
+            },
+            {
+              "key": "sub_id",
+              "value": "user1",
+              "description": "El usuario",
+              "type": "text",
+              "uuid": "9f97f67c-57ee-41eb-9598-e421b3d0fe96"
+            },
+            {
+              "key": "breed_ids",
+              "value": "abys",
+              "description": "El tipo de raza",
+              "type": "text",
+              "uuid": "837bb71f-c530-400a-8385-1de2897c0cbd"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}{/v1/images/upload?&",
+          "host": [
+            "{{baseURL}}{"
+          ],
+          "path": [
+            "v1",
+            "images",
+            "upload"
+          ],
+          "query": [
+            {
+              "key": null,
+              "value": null
+            },
+            {
+              "key": "",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarImg",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/Evz2AKUWW",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "Evz2AKUWW"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ObtenerImgId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/images/Evz2AKUWW",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "images",
+            "Evz2AKUWW"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

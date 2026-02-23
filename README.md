@@ -8,6 +8,10 @@ Este repositorio contiene pruebas de la API **TheCatAPI**, incluyendo exploraci√
 
 El repositorio incluye los siguientes documentos principales:
 
+### Postman
+
+Aqui se encuentran el Environment y las colecciones creadas 
+
 ### Informe de API
 
 Describe el proceso de onboarding de la API, endpoints probados, configuraciones de entorno y resultados obtenidos.
